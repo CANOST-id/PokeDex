@@ -1,0 +1,14 @@
+F8F9FA - ~ Colorless Blender 0
+E9ECEF - ~ Toner Gray T0
+DEE2E6 - ~ Neutral Gray N1
+CED4DA - ~ Cool Gray C2
+ADB5BD - ~ Cool Gray C4
+6C757D - ~ Cool Gray No. 7 C7
+495057 - ~ Neutral Gray N9
+343A40 - ~ Cool Gray C9
+212529 - ~ Cool Gray C10
+
+https://coolors.co/palette/f8f9fa-e9ecef-dee2e6-ced4da-adb5bd-6c757d-495057-343a40-212529
+
+                <p>Höhe: ${pokemonDetail.height}</p>
+                <p>Gewicht: ${pokemonDetail.weight}</p>

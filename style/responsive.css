@@ -1,0 +1,24 @@
+@media (max-width: 1500px) {
+    .slider {
+        display: none;
+    }
+
+    .slider_content {
+        flex-direction: column;
+    }
+
+    .slider_descript {
+        width: 100% !important;
+        padding: 0 10px 10px 10px;
+
+        span {
+            margin: 0 8px 0 8px;
+        }
+    }
+
+    .slider_mid_image {
+        position: inherit;
+        height: 100vh;
+        background-size: 50%;
+    }
+}

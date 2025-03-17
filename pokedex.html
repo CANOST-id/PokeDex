@@ -1,24 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeDex</title>
+    <title>ＰｏｋｅＤｅｘ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Viga&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/style/standart.css">
-    <link rel="stylesheet" href="/style/mainstyle.css">
+    <link rel="stylesheet" href="/style/maincontent.css">
     <link rel="stylesheet" href="/style/slider.css">
     <link rel="stylesheet" href="/style/keyframes.css">
+    <link rel="stylesheet" href="/style/responsive.css">
 
+    <script src="./script/render.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="./script/slider.js"></script>
+    <script src="./script/template.js"></script>
+    <script src="./script/fetch.js"></script>
 </head>
 
-<body>
-    <header></header>
-    
-    <section id="slider"></section>
-    <section id="content"></section>
+<body onload="init()">
+    <header>
+        <section class="image_silder">
+            <section id="slider_img" class="border_slider"></section>
 
-    <footer></footer>
+            <section class="slider_content">
+                <h1 data-content="PokeDex">PokeDex</h1>
+                <div class="slider_descript">
+                    <span>
+                        Here you will find all the information about Pokémon, including their types, strengths,
+                        weaknesses, and evolutions.
+                    </span>
+                </div>
+                <div class="slider_mid_image"></div>
+            </section>
+        </section>
+    </header>
+
+    <section id="content_overlay" class="card_background">
+        <div class="card_overlay">
+            <nav>
+                <div class="input-wrapper">
+                    <button class="search_icon">
+                        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+                                stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M22 22L20 20" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                    <input type="text" name="text" class="input" placeholder="search  Pokemon..." />
+                </div>
+            </nav>
+
+            <section id="card_section" class="card_align"></section>
+
+            <section class="load_more_section">
+                <button id="more_button" class="load_button" onclick="changeOffset()">More Pokemon here ...</button>
+            </section>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <div class="footer_content">
+            <h1>PokeDex</h1>
+        </div>
+    </footer>
 
     <dialog></dialog>
 

@@ -1,0 +1,35 @@
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateX(-8deg) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1000px) rotateX(-8deg) rotateY(360deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-50px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+@keyframes floatPokemon {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }    
+    100% {
+        transform: translateY(0px);
+    }
+}
