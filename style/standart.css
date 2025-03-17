@@ -23,6 +23,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     border-radius: 10px;
     margin: 10px 0;
     filter:
@@ -34,4 +35,5 @@ footer {
         font-family: "Viga", sans-serif;
         font-weight: 400;
     }
+
 }
