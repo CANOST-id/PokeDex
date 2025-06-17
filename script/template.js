@@ -14,7 +14,7 @@ function cardTemplate(pokemon, backgroundStyle, typesArray) {
     `;
 }
 
-function dialogTemplate(pokemon) {
+function dialogTemplate(dialogList) {
     return ` 
                     <!-- CLOSE BUTTON -->
             <svg id="close_button_id" class="rotate_90deg close_button" width="80" height="80" viewBox="0 0 80 80"
@@ -25,11 +25,11 @@ function dialogTemplate(pokemon) {
                 <line x1="52" y1="28" x2="28" y2="52" stroke="white" stroke-width="10" stroke-linecap="round" />
             </svg>
 
-            <dialog id="dialogList.${pokemon.id}"> 
-                <div class="" style="" id="card_${pokemon.id}">
+            <dialog id="${dialogList}"> 
+                <div class="" style="" id="card_">
                     <div>   
-                        <h3>#${pokemon.id}</h3>
-                        <span>${pokemon.name}</span>
+                        <h3>#${dialogList}</h3>
+                        <span></span>
                     </div>
                 </div>
             </dialog>

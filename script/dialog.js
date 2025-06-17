@@ -8,9 +8,17 @@ function stopPropagation(event) {
   event.stopPropagation();
 }
 
-function renderDialog(pokemon) {
+function renderDialog(dialogList) {
   let dialogCard = document.getElementById('overlay_id');
   toggleDialog();
   dialogCard.innerHTML = "";
-  dialogCard.innerHTML += dialogTemplate(pokemon);
+  dialogCard.innerHTML += dialogTemplate(dialogList);
 }
+
+// function idDialog(dialogList) {
+//   const idArray = dialogList;
+
+//   console.log(idArray);
+  
+//   return dialogTemplate(idArray);
+// }

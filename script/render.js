@@ -52,7 +52,7 @@ async function renderPokeCards(pokemonList) {
             .then(r => r.json()))
     );
     fullData.forEach(pokemon => {
-        dialogList.push(pokemon);
+        dialogList.push(pokemon);                                           // only pushes number of id 
         cardSection.innerHTML += renderCardTypes(pokemon);
     });
 }
