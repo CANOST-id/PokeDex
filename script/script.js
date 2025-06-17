@@ -1,14 +1,7 @@
 function init() {
-    renderSliderImage();
+    setTimeout(closeLoader, 4000);
+    closeDialog();
+    renderSlider();
+    renderRespSlider();
     getPokedex();
-}
-
-let colors = {
-    "grass": "green",
-    "poison": "blueviolet",
-    "fire": "crimson",
-    "ice": "cyaturquoise",
-    "psycho": "violet",
-    "water": "aqua",
-    "water": "aqua"
 }

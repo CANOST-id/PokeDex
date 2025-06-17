@@ -1,0 +1,30 @@
+.loader {
+    position: absolute;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    z-index: 1;
+}
+
+.loading_ball {
+    height: 250px;
+    width: 250px;
+    animation: ballRotate 2s infinite;
+}
+
+.loading_letter {
+    font-family: "Orbitron", sans-serif;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    animation-delay: 0s;
+    transform: translateY(4rem);
+    animation: hideAndSeek 2s alternate infinite;
+}

@@ -1,0 +1,77 @@
+.dialog_overlay {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.322);
+    z-index: 0;
+}
+
+.close_button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 50px;
+    transition: transform 0.5s ease;
+    transform-origin: center center;
+}
+
+.close_button:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+.left_arrow {
+    position: absolute;
+    height: 75px;
+    left: 5%;
+    top: 50%;
+    filter: invert(1);
+    cursor: pointer;
+    width: auto;
+    border-radius: 40px;
+    transition: 0.5s;
+}
+
+.right_arrow {
+    position: absolute;
+    height: 75px;
+    right: 5%;
+    top: 50%;
+    filter: invert(1);
+    cursor: pointer;
+    width: auto;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.left_arrow:hover {
+    transform: scale(1.1) translateX(-8px);
+    background-color: white;
+}
+
+.right_arrow:hover {
+    transform: scale(1.1) translateX(8px);
+    background-color: white;
+}
+
+dialog {
+    height: 65%;
+    width: 25%;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+    padding: 30px;
+    margin: 0;
+}
+
+.dialog_head {
+    height: 150px;
+    width: 100%;
+}
