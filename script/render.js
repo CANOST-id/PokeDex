@@ -61,8 +61,8 @@ console.log(dialogList);
 
 
 // return pokemon types
-function renderCardTypes(dialogList) {
-    const typesArray = dialogList.types.map(types => types.type.name);
+function renderCardTypes(pokemon) {
+    const typesArray = pokemon.types.map(types => types.type.name);
     let backgroundStyle = '';
     if (typesArray.length === 1) {
         backgroundStyle = `
@@ -71,6 +71,6 @@ function renderCardTypes(dialogList) {
         backgroundStyle = `
                         background: linear-gradient(90deg, ${colors[typesArray[0]]}, ${colors[typesArray[1]]});`;
     }
-    console.log(dialogList);
-    return cardTemplate(dialogList, backgroundStyle, typesArray);
+    console.log(pokemon);
+    return cardTemplate(pokemon, backgroundStyle, typesArray);
 }
