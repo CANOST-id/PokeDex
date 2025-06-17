@@ -5,6 +5,7 @@ function cardTemplate(pokemon, backgroundStyle, typesArray) {
                 <h3>#${pokemon.id}</h3>
                 <span>${pokemon.name}</span>
             </div>
+                <div class="background_circle">
                 <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
             <div class="type_span_align">
                 <span class="type_span" style="background-color: ${colors[typesArray[0]]};">${typesArray[0]} </span>
