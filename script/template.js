@@ -32,9 +32,9 @@ function dialogTemplate(pokemon) {
                     <img class="dialog_img" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
                 </div>
                 <div class="dialog_content">
-                    <p>Typen: ${pokemon.types.map(t => t.type.name).join(', ')}</p>
-                    <p>Größe: ${pokemon.height}</p>
-                    <p>Gewicht: ${pokemon.weight}</p>
+                    <p>Types: ${pokemon.types.map(t => t.type.name).join(', ')}</p>
+                    <p>Height: ${pokemon.height}</p>
+                    <p>Weight: ${pokemon.weight}</p>
                     <p>Stats:</p>
                     <ul>
                     ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}

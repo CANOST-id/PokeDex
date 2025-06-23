@@ -4,7 +4,6 @@ let offset = 0;
 
 // dialog array
 let pokemonIndex = [];
-let pokemonDetail = [];
 
 // colors for each type/background 
 let colors = {
@@ -58,9 +57,6 @@ async function renderPokeCards(pokemonList) {
     });
 }
 
-console.log(pokemonIndex);
-
-
 // return pokemon types
 function renderCardTypes(pokemon) {
     const typesArray = pokemon.types.map(types => types.type.name);
@@ -72,6 +68,5 @@ function renderCardTypes(pokemon) {
         backgroundStyle = `
                         background: linear-gradient(90deg, ${colors[typesArray[0]]}, ${colors[typesArray[1]]});`;
     }
-    console.log(pokemon);
     return cardTemplate(pokemon, backgroundStyle, typesArray);
 }

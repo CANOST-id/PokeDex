@@ -10,12 +10,12 @@ function stopPropagation(event) {
 
 // handle dialog
 function openDialog(pokemonId) {
-    const pokemon = pokemonIndex.find(p => p.id === pokemonId);
-    renderDialog(pokemon);
+  const pokemon = pokemonIndex.find(p => p.id === pokemonId);       // get complete objekt data 
+  renderDialog(pokemon);
 }
 
 function renderDialog(pokemon) {
-    let dialogCard = document.getElementById('overlay_id');
-    toggleDialog();
-    dialogCard.innerHTML = dialogTemplate(pokemon);
+  let dialogCard = document.getElementById('overlay_id');
+  toggleDialog();
+  dialogCard.innerHTML = dialogTemplate(pokemon);
 }
