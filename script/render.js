@@ -3,7 +3,8 @@ let limit = 30;
 let offset = 0;
 
 // dialog array
-let dialogList = [];
+let pokemonIndex = [];
+let pokemonDetail = [];
 
 // colors for each type/background 
 let colors = {
@@ -52,12 +53,12 @@ async function renderPokeCards(pokemonList) {
             .then(r => r.json()))
     );
     fullData.forEach(pokemon => {
-        dialogList.push(pokemon);                                           // only pushes number of id 
+        pokemonIndex.push(pokemon);                                           // only pushes number of id 
         cardSection.innerHTML += renderCardTypes(pokemon);
     });
 }
 
-console.log(dialogList);
+console.log(pokemonIndex);
 
 
 // return pokemon types

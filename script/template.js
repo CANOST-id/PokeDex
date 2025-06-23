@@ -1,6 +1,6 @@
 function cardTemplate(pokemon, backgroundStyle, typesArray) {
     return `
-        <div class="card scrollDown appearScrollDown" style="${backgroundStyle}" id="card_${pokemon.id}" onclick="renderDialog(${pokemon.id})">
+        <div class="card scrollDown appearScrollDown" style="${backgroundStyle}" id="card_${pokemon.id}" onclick="openDialog(${pokemon.id})">
         <div>   
                 <h3>#${pokemon.id}</h3>
                 <span>${pokemon.name}</span>
@@ -15,7 +15,7 @@ function cardTemplate(pokemon, backgroundStyle, typesArray) {
     `;
 }
 
-function dialogTemplate(dialogList) {
+function dialogTemplate(pokemon) {
     return ` 
                     <!-- CLOSE BUTTON -->
             <svg id="close_button_id" class="rotate_90deg close_button" width="80" height="80" viewBox="0 0 80 80"
@@ -26,15 +26,21 @@ function dialogTemplate(dialogList) {
                 <line x1="52" y1="28" x2="28" y2="52" stroke="white" stroke-width="10" stroke-linecap="round" />
             </svg>
 
-            <dialog id="${dialogList}"> 
-                <div class="" style="" id="card_">
-                    <div>   
-                        <h3>#${dialogList}</h3>
-                        <span></span>
-                    </div>
+            <dialog id="${pokemon.id}"> 
+                <div class="dialog_head">
+                    <h3>#${pokemon.id} - ${pokemon.name}</h3>
+                    <img class="dialog_img" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+                </div>
+                <div class="dialog_content">
+                    <p>Typen: ${pokemon.types.map(t => t.type.name).join(', ')}</p>
+                    <p>Größe: ${pokemon.height}</p>
+                    <p>Gewicht: ${pokemon.weight}</p>
+                    <p>Stats:</p>
+                    <ul>
+                    ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
+                    </ul>
                 </div>
             </dialog>
-
             <!-- left and right button -->
             <img class="left_arrow" src="./assets/icons/left-arrow.png" alt="">
             <img class="right_arrow" src="./assets/icons/right-arrow.png" alt="">

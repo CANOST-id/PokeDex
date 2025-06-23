@@ -8,17 +8,14 @@ function stopPropagation(event) {
   event.stopPropagation();
 }
 
-function renderDialog(dialogList) {
-  let dialogCard = document.getElementById('overlay_id');
-  toggleDialog();
-  dialogCard.innerHTML = "";
-  dialogCard.innerHTML += dialogTemplate(dialogList);
+// handle dialog
+function openDialog(pokemonId) {
+    const pokemon = pokemonIndex.find(p => p.id === pokemonId);
+    renderDialog(pokemon);
 }
 
-// function idDialog(dialogList) {
-//   const idArray = dialogList;
-
-//   console.log(idArray);
-  
-//   return dialogTemplate(idArray);
-// }
+function renderDialog(pokemon) {
+    let dialogCard = document.getElementById('overlay_id');
+    toggleDialog();
+    dialogCard.innerHTML = dialogTemplate(pokemon);
+}
