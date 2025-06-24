@@ -15,7 +15,7 @@ function cardTemplate(pokemon, backgroundStyle, typesArray) {
     `;
 }
 
-function dialogTemplate(pokemon) {
+function dialogTemplate(pokemon, backgroundStyle, typesArray) {
     return ` 
                     <!-- CLOSE BUTTON -->
             <svg id="close_button_id" class="rotate_90deg close_button" width="80" height="80" viewBox="0 0 80 80"
@@ -27,34 +27,35 @@ function dialogTemplate(pokemon) {
             </svg>
 
             <dialog id="${pokemon.id}"> 
-                <div class="dialog_head">
-                    <h3>#${pokemon.id} - ${pokemon.name}</h3>
-                    <img class="dialog_img" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
-                </div>
+
                 <div class="dialog_content">
-                    <p>Types: ${pokemon.types.map(t => t.type.name).join(', ')}</p>
-                    <p>Height: ${pokemon.height}</p>
-                    <p>Weight: ${pokemon.weight}</p>
-                    <p>Stats:</p>
-                    <ul>
-                    ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
-                    </ul>
-                </div>
+                    <div class="dialog_head">
+                        <div class="dialog_head_info">
+                            <h3>#${pokemon.id}</h3> 
+                            <h3>${pokemon.name}</h3>
+                        </div>
+                        <div class="dialog_head_image">
+                            <div class="dialog_image_background" style="${backgroundStyle}">
+                                <img class="dialog_image" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+                            </div>
+                        </div>
+                        <div class="dialog_type">
+                        <span>Height: ${pokemon.height}ft</span>
+                        <span>Weight: ${pokemon.weight}kg</span>
+                        </div>
+                    </div>
+                    <div class="dialog_detail">
+                        <span class="type_span" style="background-color: ${colors[typesArray[0]]};">${typesArray[0]} </span>
+                        <span class="type_span" style="background-color: ${colors[typesArray[1]]};"> ${typesArray[1] ? `<span>${typesArray[1]}</span>` : ''}</span>
+                        <p>Stats:</p>
+                        <ul>
+                        ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>     
             </dialog>
             <!-- left and right button -->
             <img class="left_arrow" src="./assets/icons/left-arrow.png" alt="">
             <img class="right_arrow" src="./assets/icons/right-arrow.png" alt="">
             `; 
 }
-        //     <dialog> 
-        //             <div class="card scrollDown appearScrollDown" style="${backgroundStyle}" id="card_${i.id}" onclick="renderDialog('dialog_${i.id}')">
-        // <div>   
-        //         <h3>#${i.id}</h3>
-        //         <span>${i.name}</span>
-        //     </div>
-        //         <img src="${i.sprites.other["official-artwork"].front_default}" alt="${i.name}">
-
-        // </div>
-        //     /dialog>
-                        
-            // <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
