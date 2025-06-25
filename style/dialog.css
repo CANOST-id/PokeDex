@@ -118,11 +118,56 @@ dialog {
 
 .dialog_head .dialog_image {
     width: 70%;
+    filter: drop-shadow(2px 2px 3px black);
 }
 
-.dialog_head .dialog_type {
+.dialog_detail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialog_detail .dialog_info_span {
     width: 80%;
     text-align: center;
     margin-top: 10px;
     background: linear-gradient(90deg, rgba(120, 105, 46, 1) 0%, rgba(218, 195, 116, 1) 50%, rgba(120, 105, 46, 1) 100%);
+}
+
+.dialog_detail .dialog_type_align {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dialog_detail .dialog_type {
+    width: 18%;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 2px;
+    font-weight: 600;
+    filter: drop-shadow(2px 2px 3px black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    width: 95%;
+    border-color: black;
+}
+
+.dialog_detail .dialog_info_buttons {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-evenly;
+
+    button {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        background-image: linear-gradient(to bottom right, rgba(120, 105, 46, 1) 0%, rgba(218, 195, 116, 1) 50%, rgba(120, 105, 46, 1) 100%);
+    }
 }

@@ -29,33 +29,46 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
             <dialog id="${pokemon.id}"> 
 
                 <div class="dialog_content">
-                    <div class="dialog_head">
+                    <section class="dialog_head">
                         <div class="dialog_head_info">
-                            <h3>#${pokemon.id}</h3> 
-                            <h3>${pokemon.name}</h3>
+                            <h3>#${pokemon.id} - ${pokemon.name}</h3> 
+                            <h3></h3>
                         </div>
                         <div class="dialog_head_image">
                             <div class="dialog_image_background" style="${backgroundStyle}">
                                 <img class="dialog_image" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
                             </div>
                         </div>
-                        <div class="dialog_type">
-                        <span>Height: ${pokemon.height}ft</span>
-                        <span>Weight: ${pokemon.weight}kg</span>
+
+                    </section>
+                    <section class="dialog_detail">
+                        <div class="dialog_info_span">
+                            <span>Height: ${pokemon.height}ft</span>
+                            <span>Weight: ${pokemon.weight}lbs</span>
                         </div>
-                    </div>
-                    <div class="dialog_detail">
-                        <span class="type_span" style="background-color: ${colors[typesArray[0]]};">${typesArray[0]} </span>
-                        <span class="type_span" style="background-color: ${colors[typesArray[1]]};"> ${typesArray[1] ? `<span>${typesArray[1]}</span>` : ''}</span>
-                        <p>Stats:</p>
-                        <ul>
-                        ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
-                        </ul>
-                    </div>
-                </div>     
+                        <div class="dialog_type_align">
+                            <span class="dialog_type" style="background-color: ${colors[typesArray[0]]};">${typesArray[0]} </span>
+                            <span class="dialog_type" style="background-color: ${colors[typesArray[1]]};"> ${typesArray[1] ? `<span>${typesArray[1]}</span>` : ''}</span>
+                        </div>
+                        <hr>
+                        <div class="dialog_info_buttons">
+                            <button> STATS </button>
+                            <button> EVOLUTION </button>
+                            <button> MOVES </button>
+                        </div>
+                        <hr>
+                        <div class="dialog_info_content" id="dialog_info_content_id">
+                        
+                        </div>
+                    </section>
+                </div>
             </dialog>
             <!-- left and right button -->
             <img class="left_arrow" src="./assets/icons/left-arrow.png" alt="">
             <img class="right_arrow" src="./assets/icons/right-arrow.png" alt="">
-            `; 
+            `;
 }
+
+/* <ul>
+    ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
+</ul> */
