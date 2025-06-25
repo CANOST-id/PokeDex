@@ -20,6 +20,7 @@ function renderDialog(pokemon) {
   dialogCard.innerHTML = returnTypes(pokemon);
 }
 
+// return types for dialog 
 function returnTypes(pokemon) {
   let typesArray = pokemon.types.map(types => types.type.name);
   let backgroundStyle = '';
