@@ -3,7 +3,7 @@ function cardTemplate(pokemon, backgroundStyle, typesArray) {
         <div class="card scrollDown appearScrollDown" style="${backgroundStyle}" id="card_${pokemon.id}" onclick="openDialog(${pokemon.id})">
         <div>   
                 <h3>#${pokemon.id}</h3>
-                <span>${pokemon.name}</span>
+                <span>${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</span>
             </div>
                 <div class="background_circle">
                 <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
@@ -31,8 +31,8 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
                 <div class="dialog_content">
                     <section class="dialog_head">
                         <div class="dialog_head_info">
-                            <h3>#${pokemon.id} - ${pokemon.name}</h3> 
-                            <h3></h3>
+                            <h3>#${pokemon.id} - ${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h3> 
+                            <h3>${pokemon.base_experience} HP</h3>
                         </div>
                         <div class="dialog_head_image">
                             <div class="dialog_image_background" style="${backgroundStyle}">
@@ -43,8 +43,8 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
                     </section>
                     <section class="dialog_detail">
                         <div class="dialog_info_span">
-                            <span>Height: ${pokemon.height}ft</span>
-                            <span>Weight: ${pokemon.weight}lbs</span>
+                            <span>Height: ${(pokemon.height / 10).toFixed(1)}m</span>
+                            <span>Weight: ${(pokemon.weight / 10).toFixed(1)}kg</span>
                         </div>
                         <div class="dialog_type_align">
                             <span class="dialog_type" style="background-color: ${colors[typesArray[0]]};">${typesArray[0]} </span>
@@ -69,6 +69,16 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
             `;
 }
 
-/* <ul>
-    ${pokemon.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
-</ul> */
+function statsTemplate() {
+    return `
+    
+    `;
+}
+
+function evolutionTemplate() {
+    
+}
+
+function movesTemplate() {
+    
+}
