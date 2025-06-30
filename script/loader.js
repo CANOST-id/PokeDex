@@ -1,4 +1,4 @@
-// handle opening loader
+// handle loader
 function closeLoader() {
     document.getElementById('loader_id').classList.add('loader_blendout');
     setTimeout(keepLoaderClosed, 500);
@@ -7,9 +7,6 @@ function closeLoader() {
 function keepLoaderClosed() {
     document.getElementById('loader_id').classList.add('d_none');
 }
-
-// handle load more button
-
 
 // load 30 more pokemon
 async function changeOffset() {
@@ -22,6 +19,7 @@ async function changeOffset() {
     setTimeout(morePokemonText, 1000)
 }
 
+// handle load more button
 function morePokemonText() {
     let button = document.getElementById('more_button');
     button.innerText = "More Pokemon..."

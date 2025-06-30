@@ -35,8 +35,7 @@ function returnTypes(pokemon) {
   return dialogTemplate(pokemon, backgroundStyle, typesArray);
 }
 
-// render info content for stats - evolution - moves
-
+// handle content for stats - evolution - moves
 function renderStats() {
   document.getElementById('info_stats').classList.remove('d_none');
   document.getElementById('info_evolution').classList.add('d_none');
