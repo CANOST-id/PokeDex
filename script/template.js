@@ -1,7 +1,7 @@
 function cardTemplate(pokemon, backgroundStyle, typesArray) {
     return `
         <div class="card scrollDown appearScrollDown" style="${backgroundStyle}" id="card_${pokemon.id}" onclick="openDialog(${pokemon.id})">
-        <div>   
+            <div>   
                 <h3>#${pokemon.id}</h3>
                 <span>${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</span>
             </div>
@@ -27,20 +27,20 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
             </svg>
 
             <dialog id="${pokemon.id}"> 
+                <section class="dialog_content">
 
-                <div class="dialog_content">
                     <section class="dialog_head">
                         <div class="dialog_head_info">
                             <h3>#${pokemon.id} - ${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h3> 
-                            <h3>${pokemon.base_experience} HP</h3>
+                            <h3>${pokemon.base_experience} XP</h3>
                         </div>
                         <div class="dialog_head_image">
                             <div class="dialog_image_background" style="${backgroundStyle}">
                                 <img class="dialog_image" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
                             </div>
                         </div>
-
                     </section>
+
                     <section class="dialog_detail">
                         <div class="dialog_info_span">
                             <span>Height: ${(pokemon.height / 10).toFixed(1)}m</span>
@@ -52,33 +52,35 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
                         </div>
                         <hr>
                         <div class="dialog_info_buttons">
-                            <button> STATS </button>
-                            <button> EVOLUTION </button>
-                            <button> MOVES </button>
+                            <button onclick="renderStats(${pokemon.id})"> STATS </button>
+                            <button onclick="renderEvolution(${pokemon.id})"> EVOLUTION </button>
+                            <button onclick="renderMoves(${pokemon.id})"> MOVES </button>
                         </div>
                         <hr>
-                        <div class="dialog_info_content" id="dialog_info_content_id">
-                        
-                        </div>
                     </section>
-                </div>
+
+                    <section class="dialog_info_content" id="dialog_info_content_id">
+                        <ul id="info_stats">
+                        ${pokemon.stats.map(stat => `<li>
+                                                        <span>${stat.stat.name} :</span>
+                                                        <span>${stat.base_stat}</span>
+                                                    </li>
+                                                    `).join('')}
+                        </ul>
+                        <ul id="info_evolution">
+                        
+                        </ul>
+                        <ul id="info_moves">
+                        ${pokemon.moves.map(move => `<li>
+                                                        ${move.move.name}
+                                                    </li>
+                                                    `)}
+                        </ul>
+                    </section>
+                </section>
             </dialog>
             <!-- left and right button -->
-            <img class="left_arrow" src="./assets/icons/left-arrow.png" alt="">
-            <img class="right_arrow" src="./assets/icons/right-arrow.png" alt="">
+                <img class="left_arrow" src="./assets/icons/left-arrow.png" alt="">
+                <img class="right_arrow" src="./assets/icons/right-arrow.png" alt="">
             `;
-}
-
-function statsTemplate() {
-    return `
-    
-    `;
-}
-
-function evolutionTemplate() {
-    
-}
-
-function movesTemplate() {
-    
 }

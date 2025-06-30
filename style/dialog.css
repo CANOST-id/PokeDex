@@ -171,3 +171,21 @@ hr {
         background-image: linear-gradient(to bottom right, rgba(120, 105, 46, 1) 0%, rgba(218, 195, 116, 1) 50%, rgba(120, 105, 46, 1) 100%);
     }
 }
+
+.dialog_info_content {
+    height: 40%;
+    width: 100%;
+    overflow: auto;
+}
+
+.dialog_info_content ul{ 
+    padding: 0 20px 0 20px;
+    margin: 0;
+}
+
+
+.dialog_info_content #info_stats li{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
