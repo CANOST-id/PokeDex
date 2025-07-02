@@ -181,6 +181,8 @@ hr {
 .dialog_info_content ul{ 
     padding: 0 20px 0 20px;
     margin: 0;
+        font-weight: 500;
+
 }
 
 

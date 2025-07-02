@@ -74,7 +74,7 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
                         ${pokemon.moves.map(move => `<li>
                                                         ${move.move.name}
                                                     </li>
-                                                    `)}
+                                                    `).join('')}
                         </ul>
                     </section>
                 </section>
