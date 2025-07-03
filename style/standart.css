@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    background-color: #343A40;
     margin: 0;
 }
 
@@ -44,4 +45,16 @@ footer {
 
 .s_none {
     overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    background-color: #343A40;
+    border-radius: 10px;
+    width: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FDCC01;
+    border: 5px solid #365FAC;
+    border-radius: 10px;
 }

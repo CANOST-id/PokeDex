@@ -178,15 +178,25 @@ hr {
     overflow: auto;
 }
 
-.dialog_info_content ul{ 
+.dialog_info_content::-webkit-scrollbar {
+    background-color: #99a0a7;
+    border-radius: 2px;
+}
+
+.dialog_info_content::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom right, rgba(120, 105, 46, 1) 0%, rgba(218, 195, 116, 1) 50%, rgba(120, 105, 46, 1) 100%);
+    border-radius: 2px;
+    border: none;
+}
+
+.dialog_info_content ul {
     padding: 0 20px 0 20px;
     margin: 0;
-        font-weight: 500;
+    font-weight: 500;
 
 }
 
-
-.dialog_info_content #info_stats li{
+.dialog_info_content #info_stats li {
     display: flex;
     text-align: center;
     justify-content: space-between;
