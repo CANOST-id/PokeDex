@@ -45,3 +45,19 @@ footer {
 .s_none {
     overflow: hidden;
 }
+
+.scale_1-2 {
+    transform: scale(1.2);
+}
+
+::-webkit-scrollbar {
+    background-color: #343A40;
+    border-radius: 10px;
+    width: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FDCC01;
+    border: 5px solid #365FAC;
+    border-radius: 10px;
+}
