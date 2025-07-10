@@ -18,6 +18,7 @@ function renderDialog(pokemon) {
   let dialogCard = document.getElementById('overlay_id');
   toggleDialog();
   dialogCard.innerHTML = returnTypes(pokemon);
+  document.getElementById('stats_button').classList.add('scale_1-2');
   document.getElementById('info_evolution').classList.add('d_none');
   document.getElementById('info_moves').classList.add('d_none');
 }
@@ -37,18 +38,30 @@ function returnTypes(pokemon) {
 
 // handle content for stats - evolution - moves
 function renderStats() {
+  document.getElementById('stats_button').classList.add('scale_1-2');
+  document.getElementById('moves_button').classList.remove('scale_1-2');
+  document.getElementById('evo_button').classList.remove('scale_1-2');
+
   document.getElementById('info_stats').classList.remove('d_none');
   document.getElementById('info_evolution').classList.add('d_none');
   document.getElementById('info_moves').classList.add('d_none');
 }
 
 function renderEvolution() {
+  document.getElementById('evo_button').classList.add('scale_1-2');
+  document.getElementById('moves_button').classList.remove('scale_1-2');
+  document.getElementById('stats_button').classList.remove('scale_1-2');
+
   document.getElementById('info_evolution').classList.remove('d_none');
   document.getElementById('info_moves').classList.add('d_none');
   document.getElementById('info_stats').classList.add('d_none');
 }
 
 function renderMoves() {
+  document.getElementById('moves_button').classList.add('scale_1-2');
+  document.getElementById('evo_button').classList.remove('scale_1-2');
+  document.getElementById('stats_button').classList.remove('scale_1-2');
+
   document.getElementById('info_moves').classList.remove('d_none');
   document.getElementById('info_evolution').classList.add('d_none');
   document.getElementById('info_stats').classList.add('d_none');

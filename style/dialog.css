@@ -170,6 +170,11 @@ hr {
         border: none;
         background-image: linear-gradient(to bottom right, rgba(120, 105, 46, 1) 0%, rgba(218, 195, 116, 1) 50%, rgba(120, 105, 46, 1) 100%);
     }
+
+    button:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+    }
 }
 
 .dialog_info_content {

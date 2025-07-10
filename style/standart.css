@@ -47,6 +47,10 @@ footer {
     overflow: hidden;
 }
 
+.scale_1-2 {
+    transform: scale(1.2);
+}
+
 ::-webkit-scrollbar {
     background-color: #343A40;
     border-radius: 10px;

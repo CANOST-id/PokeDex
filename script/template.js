@@ -52,9 +52,9 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
                         </div>
                         <hr>
                         <div class="dialog_info_buttons">
-                            <button onclick="renderStats(${pokemon.id})"> STATS </button>
-                            <button onclick="renderEvolution(${pokemon.id})"> EVOLUTION </button>
-                            <button onclick="renderMoves(${pokemon.id})"> MOVES </button>
+                            <button id="stats_button" onclick="renderStats(${pokemon.id})"> STATS </button>
+                            <button id="evo_button" onclick="renderEvolution(${pokemon.id})"> EVOLUTION </button>
+                            <button id="moves_button" onclick="renderMoves(${pokemon.id})"> MOVES </button>
                         </div>
                         <hr>
                     </section>
