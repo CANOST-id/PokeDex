@@ -9,21 +9,25 @@ function stopPropagation(event) {
 }
 
 // handle dialog
-function openDialog(pokemonId) {
+async function openDialog(pokemonId) {
   const pokemon = pokemonIndex.find(p => p.id === pokemonId);       // get complete objekt data 
-  renderDialog(pokemon);
+  const evolutionNames = await fetchEvolutionChain(pokemon.name);
+  const evolutionImages = getEvolutionImages(evolutionNames, pokemonIndex);
+  renderDialog(pokemon, evolutionImages);
 }
 
-function renderDialog(pokemon) {
+// render dialog
+function renderDialog(pokemon, evolutionImages) {
   let dialogCard = document.getElementById('overlay_id');
   toggleDialog();
-  dialogCard.innerHTML = returnTypes(pokemon);
+  dialogCard.innerHTML = returnTypes(pokemon, evolutionImages);
   document.getElementById('stats_button').classList.add('scale_1-2');
   document.getElementById('info_evolution').classList.add('d_none');
   document.getElementById('info_moves').classList.add('d_none');
 }
 
-function returnTypes(pokemon) {
+// get and return pokemon types
+function returnTypes(pokemon, evolutionImages) {
   let typesArray = pokemon.types.map(types => types.type.name);
   let backgroundStyle = '';
   if (typesArray.length === 1) {
@@ -33,10 +37,43 @@ function returnTypes(pokemon) {
     backgroundStyle = `
                         background: linear-gradient(90deg, ${colors[typesArray[0]]}, ${colors[typesArray[1]]});`;
   }
-  return dialogTemplate(pokemon, backgroundStyle, typesArray);
+  return dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages);
 }
 
-// handle content for stats - evolution - moves
+// get evoltuion chain
+let evoNames = [];
+async function fetchEvolutionChain(pokemon) {
+  // get pokemon basics
+  const pokeRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+  let pokeData = await pokeRes.json();
+  // get species data
+  const speciesRes = await fetch(pokeData.species.url);
+  let speciesData = await speciesRes.json();
+  // get evolution chain
+  const evoRes = await fetch(speciesData.evolution_chain.url);
+  let evoData = await evoRes.json();
+  // 4. Evolutionen extrahieren
+  function traverse(chain) {
+    evoNames.push(chain.species.name);
+    chain.evolves_to.forEach(traverse);
+  }
+  traverse(evoData.chain);
+  return evoNames;
+}
+
+// get evolution images
+function getEvolutionImages(evoNames, pokemon) {
+  return evoNames.map(name => {
+    let findId = pokemon.find(p => p.name === name);
+    let id = findId ? findId.id : null;
+    let evolutionURL = id 
+      ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+      : '';
+    return { name, id, evolutionURL };
+  });
+}
+
+// show and hide content for stats - evolution - moves
 function renderStats() {
   document.getElementById('stats_button').classList.add('scale_1-2');
   document.getElementById('moves_button').classList.remove('scale_1-2');

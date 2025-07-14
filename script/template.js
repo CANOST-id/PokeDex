@@ -15,7 +15,7 @@ function cardTemplate(pokemon, backgroundStyle, typesArray) {
     `;
 }
 
-function dialogTemplate(pokemon, backgroundStyle, typesArray) {
+function dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages) {
     return ` 
                     <!-- CLOSE BUTTON -->
             <svg id="close_button_id" class="rotate_90deg close_button" width="80" height="80" viewBox="0 0 80 80"
@@ -68,6 +68,10 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray) {
                                                     `).join('')}
                         </ul>
                         <ul id="info_evolution">
+                        ${evolutionImages.map(evolution => `
+                                                            <img src="${evolution.evolutionURL}"
+                                                            <span>${evolution.name}</span>
+                                                            `).join('')}
                         
                         </ul>
                         <ul id="info_moves">
