@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    background-color: #343A40;
     margin: 0;
 }
 
@@ -52,7 +53,6 @@ footer {
 
 ::-webkit-scrollbar {
     background-color: #343A40;
-    border-radius: 10px;
     width: 18px;
 }
 
