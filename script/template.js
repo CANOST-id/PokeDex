@@ -68,9 +68,10 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages) {
                                                     `).join('')}
                         </ul>
                         <ul id="info_evolution">
-                        ${evolutionImages.map(evolution => `
-                                                            <img src="${evolution.evolutionURL}"
-                                                            <span>${evolution.name}</span>
+                        ${evolutionImages.map(evolution => `<div class="evo_images_overlay">
+                                                                <img class="evo_images" src="${evolution.evolutionURL}">
+                                                                <span>${evolution.name[0].toUpperCase() + evolution.name.slice(1)}</span>
+                                                            </div>
                                                             `).join('')}
                         
                         </ul>

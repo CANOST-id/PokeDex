@@ -41,19 +41,16 @@ function returnTypes(pokemon, evolutionImages) {
 }
 
 // get evoltuion chain
-let evoNames = [];
 async function fetchEvolutionChain(pokemon) {
+  let evoNames = [];
   // get pokemon basics
   const pokeRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
   let pokeData = await pokeRes.json();
-  // get species data
-  const speciesRes = await fetch(pokeData.species.url);
+  const speciesRes = await fetch(pokeData.species.url);             // get species data
   let speciesData = await speciesRes.json();
-  // get evolution chain
-  const evoRes = await fetch(speciesData.evolution_chain.url);
+  const evoRes = await fetch(speciesData.evolution_chain.url);      // get evolution chain
   let evoData = await evoRes.json();
-  // 4. Evolutionen extrahieren
-  function traverse(chain) {
+  function traverse(chain) {                                        // extract evolution
     evoNames.push(chain.species.name);
     chain.evolves_to.forEach(traverse);
   }
