@@ -43,14 +43,13 @@ function returnTypes(pokemon, evolutionImages) {
 // get evoltuion chain
 async function fetchEvolutionChain(pokemon) {
   let evoNames = [];
-  // get pokemon basics
-  const pokeRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+  const pokeRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);  // get pokemon basics
   let pokeData = await pokeRes.json();
-  const speciesRes = await fetch(pokeData.species.url);             // get species data
+  const speciesRes = await fetch(pokeData.species.url);                         // get species data
   let speciesData = await speciesRes.json();
-  const evoRes = await fetch(speciesData.evolution_chain.url);      // get evolution chain
+  const evoRes = await fetch(speciesData.evolution_chain.url);                  // get evolution chain
   let evoData = await evoRes.json();
-  function traverse(chain) {                                        // extract evolution
+  function traverse(chain) {                                                    // extract evolution
     evoNames.push(chain.species.name);
     chain.evolves_to.forEach(traverse);
   }
@@ -66,7 +65,7 @@ function getEvolutionImages(evoNames, pokemon) {
     let evolutionURL = id 
       ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
       : '';
-    return { name, id, evolutionURL };
+    return {name, id, evolutionURL};
   });
 }
 
@@ -99,4 +98,13 @@ function renderMoves() {
   document.getElementById('info_moves').classList.remove('d_none');
   document.getElementById('info_evolution').classList.add('d_none');
   document.getElementById('info_stats').classList.add('d_none');
+}
+
+// 
+function plusPokemon(pokemon) {
+  pokemon.id + 1;
+  if (pokemon.id > limit) {
+    pokemon.id = 0;
+  }
+  return dialogTemplate(pokemon);
 }

@@ -1,10 +1,16 @@
 .resp_slider {
     position: absolute;
-    width: 200px;
-    height: 250px;
-    top: 10%;
-    left: calc(50% - 100px);
+    width: auto;
+    height: 400px;
+    top: 20%;
+    left: calc(50% - 150px);
     z-index: 2;
+
+    .img_size {
+        width: auto;
+        height: 400px;
+        animation: float 6s ease-in-out infinite;
+    }
 }
 
 @media (max-width: 1500px) {
@@ -24,10 +30,6 @@
             flex-wrap: wrap;
         }
     }
-
-    .slider_mid_image {
-        background-size: 40%;
-    }
 }
 
 @media (max-width: 1249px) {
@@ -37,6 +39,10 @@
     }
 
     .slider {
+        display: none;
+    }
+
+    .slider_mid_image {
         display: none;
     }
 
@@ -65,9 +71,21 @@
     }
 }
 
+@media (max-width:570px) {
+    .resp_slider .img_size {
+        height: 350px;
+    }
+}
+
 @media (max-width:504px) {
     .pokedex_logo {
         height: 150px;
+    }
+}
+
+@media (max-width:450px) {
+    .resp_slider .img_size {
+        height: 300px;
     }
 }
 
