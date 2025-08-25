@@ -26,7 +26,7 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages) {
                 <line x1="52" y1="28" x2="28" y2="52" stroke="white" stroke-width="10" stroke-linecap="round" />
             </svg>
 
-            <dialog id="${pokemon.id}"> 
+            <dialog id="${pokemon.id}" class="open_dialog"> 
                 <section class="dialog_content">
 
                     <section class="dialog_head">
