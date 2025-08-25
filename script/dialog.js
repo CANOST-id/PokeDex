@@ -3,6 +3,11 @@ function toggleDialog() {
   document.getElementById('overlay_id').classList.toggle('d_none');
 }
 
+function closeDialog(pokemonId) {
+  document.getElementById(pokemonId).close();
+  toggleDialog();
+}
+
 // stop propagation
 function stopPropagation(event) {
   event.stopPropagation();
@@ -100,11 +105,20 @@ function renderMoves() {
   document.getElementById('info_stats').classList.add('d_none');
 }
 
-// 
-function plusPokemon(pokemon) {
-  pokemon.id + 1;
-  if (pokemon.id > limit) {
-    pokemon.id = 0;
-  }
-  return dialogTemplate(pokemon);
+// next and previous dialog
+function nextDialog(currentId) {
+  let currentIndex = pokemonIndex.findIndex(p => p.id === currentId);
+  let nextIndex = (currentIndex + 1) % pokemonIndex.length;
+  let nextId = pokemonIndex[nextIndex].id;
+  closeDialog(currentId);
+  openDialog(nextId);
 }
+
+function previousDialog(currentId) {
+  let currentIndex = pokemonIndex.findIndex(p => p.id === currentId);
+  let previousIndex = (currentIndex - 1 + pokemonIndex.length) % pokemonIndex.length;
+  let previousId = pokemonIndex[previousIndex].id;
+  closeDialog(currentId);
+  openDialog(previousId);
+}
+

@@ -85,7 +85,7 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages) {
                 </section>
             </dialog>
             <!-- left and right button -->
-                <img class="left_arrow" src="./assets/icons/left-arrow.png" alt="">
-                <img class="right_arrow" src="./assets/icons/right-arrow.png" alt="" onclick="plusPokemon(${pokemon.id})">
+                <img class="left_arrow" src="./assets/icons/left-arrow.png" alt="" onclick="previousDialog(${pokemon.id})">
+                <img class="right_arrow" src="./assets/icons/right-arrow.png" alt="" onclick="nextDialog(${pokemon.id})">
             `;
 }
