@@ -18,9 +18,9 @@ function cardTemplate(pokemon, backgroundStyle, typesArray) {
 function dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages) {
     return ` 
                     <!-- CLOSE BUTTON -->
-            <svg id="close_button_id" class="rotate_90deg close_button" width="80" height="80" viewBox="0 0 80 80"
+            <svg id="close_button_id" class="rotate_90deg close_button" width="60" height="60" viewBox="0 0 80 80"
                 onclick="toggleDialog()" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="35" stroke="white" stroke-width="10" fill="none" />
+                <circle cx="40" cy="40" r="35" stroke="white" stroke-width="5" fill="none" />
                 <!-- CROSS -->
                 <line x1="28" y1="28" x2="52" y2="52" stroke="white" stroke-width="10" stroke-linecap="round" />
                 <line x1="52" y1="28" x2="28" y2="52" stroke="white" stroke-width="10" stroke-linecap="round" />
