@@ -70,11 +70,11 @@
         flex-direction: column;
     }
 
-    .right_arrow{
+    .right_arrow {
         top: 89% !important;
     }
 
-    .left_arrow{
+    .left_arrow {
         top: 89% !important;
     }
 }
@@ -88,6 +88,30 @@
 @media (max-width:504px) {
     .pokedex_logo {
         height: 150px;
+    }
+}
+
+@media (max-width:470px) {
+    .open_dialog {
+        width: 280px;
+    }
+
+    .dialog_head h3 {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .dialog_info_span {
+        font-size: 14px;
+    }
+
+    .dialog_info_buttons button {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .dialog_info_content #info_evolution {
+        flex-direction: column;
     }
 }
 
