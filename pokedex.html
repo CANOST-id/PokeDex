@@ -29,6 +29,7 @@
     <script src="./script/template.js"></script>
     <script src="./script/dialog.js"></script>
     <script src="./script/loader.js"></script>
+    <script src="./script/search.js"></script>
 </head>
 
 <body onload="init()">
@@ -44,7 +45,7 @@
     <header>
         <nav>
             <div class="input-wrapper">
-                <button class="search_icon">
+                <button class="search_icon" onclick="searchPokemon()">
                     <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
@@ -53,7 +54,7 @@
                             stroke-linejoin="round"></path>
                     </svg>
                 </button>
-                <input type="text" name="text" class="input" placeholder="search  Pokemon..." />
+                <input type="text" name="text" class="input" id="search_input" placeholder="search  Pokemon..." />
             </div>
         </nav>
 

@@ -181,3 +181,33 @@ nav {
 .load_button:hover {
     box-shadow: inset 0px 0px 25px #FFCC01;
 }
+
+/* no pokemon found design incl. go back button*/
+.not_found {
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.go_back_button {
+    width: 20%;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    position: relative;
+    height: 50px;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.go_back_button:hover {
+    box-shadow: inset 0px 0px 25px #FFCC01;
+}

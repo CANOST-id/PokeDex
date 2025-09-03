@@ -25,3 +25,15 @@ function morePokemonText() {
     button.innerText = "More Pokemon..."
     button.disabled = false;
 }
+
+// disable button 
+function disableButton() {
+    let button = document.getElementById('more_button');
+    button.disabled = true;
+}
+
+// activate button
+function enableButton() {
+    let button = document.getElementById('more_button');
+    button.disabled = false;
+}
