@@ -18,12 +18,26 @@ function stopPropagation(event) {
   event.stopPropagation();
 }
 
+// shows loading spinner for dialog
+function showDialogLoader() {
+  let spinner = document.getElementById('dialog_loader');
+  if (spinner) spinner.classList.remove('d_none');
+}
+
+// hides loading spinner for dialog
+function hideDialogLoader() {
+  let spinner = document.getElementById('dialog_loader');
+  if (spinner) spinner.classList.add('d_none');
+}
+
 // handle dialog
 async function openDialog(pokemonId) {
+  showDialogLoader();
   const pokemon = pokemonIndex.find(p => p.id === pokemonId);       // get complete objekt data 
   const evolutionNames = await fetchEvolutionChain(pokemon.name);
   const evolutionImages = getEvolutionImages(evolutionNames, pokemonIndex);
   document.body.style.overflow = 'hidden';                          // disable scroll when dialog opens
+  hideDialogLoader();
   renderDialog(pokemon, evolutionImages);
 }
 
