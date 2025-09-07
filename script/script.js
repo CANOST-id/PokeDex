@@ -1,6 +1,6 @@
-function init() {
-    setTimeout(closeLoader, 4000);
+async function init() {
     renderSlider();
     renderRespSlider();
-    getPokedex();
+    await getPokedex();
+    closeLoader();
 }

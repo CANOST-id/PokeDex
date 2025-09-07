@@ -17,7 +17,7 @@ async function changeOffset() {
     limit = + 30;
     offset = offset + 30;
     await getPokedex();
-    setTimeout(morePokemonText, 1000)
+    setTimeout(morePokemonText, 1000);
 }
 
 // handle load more button
