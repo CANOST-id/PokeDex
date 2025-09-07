@@ -1,6 +1,11 @@
 // toggle dialog
 function toggleDialog() {
-  document.getElementById('overlay_id').classList.toggle('d_none');
+  let overlay = document.getElementById('overlay_id');
+  let wasOpen = !overlay.classList.contains('d_none');
+  overlay.classList.toggle('d_none');
+  if (wasOpen) {
+    document.body.style.overflow = 'auto'; // enable scroll when dialog closes
+  }
 }
 
 function closeDialog(pokemonId) {
@@ -18,7 +23,7 @@ async function openDialog(pokemonId) {
   const pokemon = pokemonIndex.find(p => p.id === pokemonId);       // get complete objekt data 
   const evolutionNames = await fetchEvolutionChain(pokemon.name);
   const evolutionImages = getEvolutionImages(evolutionNames, pokemonIndex);
-  document.body.style.overflow = 'hidden';                          // disable scroll
+  document.body.style.overflow = 'hidden';                          // disable scroll when dialog opens
   renderDialog(pokemon, evolutionImages);
 }
 
