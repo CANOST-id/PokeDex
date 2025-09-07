@@ -15,18 +15,18 @@ function cardTemplate(pokemon, backgroundStyle, typesArray) {
     `;
 }
 
-function dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages) {
+function dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages, pokemonId) {
     return ` 
                     <!-- CLOSE BUTTON -->
             <svg id="close_button_id" class="rotate_90deg close_button" width="60" height="60" viewBox="0 0 80 80"
-                onclick="toggleDialog()" xmlns="http://www.w3.org/2000/svg">
+                xmlns="http://www.w3.org/2000/svg">
                 <circle cx="40" cy="40" r="35" stroke="white" stroke-width="5" fill="none" />
                 <!-- CROSS -->
                 <line x1="28" y1="28" x2="52" y2="52" stroke="white" stroke-width="10" stroke-linecap="round" />
                 <line x1="52" y1="28" x2="28" y2="52" stroke="white" stroke-width="10" stroke-linecap="round" />
             </svg>
 
-            <dialog id="${pokemon.id}" class="open_dialog"> 
+            <dialog id="${pokemon.id}" class="open_dialog" onclick="stopPropagation(event)">
                 <section class="dialog_content">
 
                     <section class="dialog_head">
@@ -83,9 +83,9 @@ function dialogTemplate(pokemon, backgroundStyle, typesArray, evolutionImages) {
                         </ul>
                     </section>
                 </section>
-            </dialog>
-            <!-- left and right button -->
+                <!-- left and right button -->
                 <img class="left_arrow" src="./assets/icons/left-arrow.png" alt="" onclick="previousDialog(${pokemon.id})">
                 <img class="right_arrow" src="./assets/icons/right-arrow.png" alt="" onclick="nextDialog(${pokemon.id})">
+                </dialog>
             `;
 }
