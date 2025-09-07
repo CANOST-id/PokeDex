@@ -87,10 +87,10 @@ function getEvolutionImages(evoNames, pokemon) {
   return evoNames.map(name => {
     let findId = pokemon.find(p => p.name === name);
     let id = findId ? findId.id : null;
-    let evolutionURL = id 
+    let evolutionURL = id
       ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
       : '';
-    return {name, id, evolutionURL};
+    return { name, id, evolutionURL };
   });
 }
 
