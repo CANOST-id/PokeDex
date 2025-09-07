@@ -69,7 +69,7 @@
 }
 
 .open_dialog {
-    animation: dialogBlendIn 1s ease-in;
+    animation: dialogBlendIn 0.4s;
 }
 
 @keyframes ballRotate {
