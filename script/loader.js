@@ -6,7 +6,7 @@ function closeLoader() {
 
 function keepLoaderClosed() {
     document.getElementById('loader_id').classList.add('d_none');
-    document.body.style.overflow = 'auto';                          // enable scroll
+    document.body.style.overflow = 'auto';
 }
 
 // load 30 more pokemon
