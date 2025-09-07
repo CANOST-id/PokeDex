@@ -69,14 +69,6 @@
     .footer_content {
         flex-direction: column;
     }
-
-    .right_arrow {
-        top: 89% !important;
-    }
-
-    .left_arrow {
-        top: 89% !important;
-    }
 }
 
 @media (max-width:570px) {

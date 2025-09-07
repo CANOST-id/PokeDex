@@ -27,7 +27,7 @@
     position: absolute;
     height: 75px;
     left: 5%;
-    top: 50%;
+    top: 105%;
     filter: invert(1);
     cursor: pointer;
     width: auto;
@@ -39,7 +39,7 @@
     position: absolute;
     height: 75px;
     right: 5%;
-    top: 50%;
+    top: 105%;
     filter: invert(1);
     cursor: pointer;
     width: auto;
