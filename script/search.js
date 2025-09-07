@@ -13,7 +13,7 @@ function getCardElements() {
 function filterCards(input, cards) {
     let found = false;
     for (let card of cards) {
-        const cardText = card.textContent.toLowerCase();
+        let cardText = card.textContent.toLowerCase();
         if (cardText.includes(input)) {
             card.style.display = '';
             found = true;
@@ -25,7 +25,7 @@ function filterCards(input, cards) {
 }
 
 function handleNoResults(found) {
-    const cardSection = document.getElementById('card_section');
+    let cardSection = document.getElementById('card_section');
     if (!found) {
         cardSection.innerHTML = `<h3 class="not_found">No Pokémon found. Please try again.
                                 Or go ... <button class="go_back_button" onclick="resetToOriginalList()">...BACK</button></h3>`;
@@ -34,20 +34,20 @@ function handleNoResults(found) {
 
 function handleEmptyInput(input) {
     if (input === '') {
-        const cardSection = document.getElementById('card_section');
+        let cardSection = document.getElementById('card_section');
         cardSection.innerHTML = '';
         renderPokeCards(pokemonIndex);
     }
 }
 
 function searchPokemon() {
-    const input = getSearchInput();
+    let input = getSearchInput();
     if (!isInputValid(input)) {
         alert('Bitte gib mindestens 3 Buchstaben ein.');
         return;
     }
-    const cards = getCardElements();
-    const found = filterCards(input, cards);
+    let cards = getCardElements();
+    let found = filterCards(input, cards);
     handleNoResults(found);
     handleEmptyInput(input);
     clearSearch();
@@ -59,7 +59,7 @@ function clearSearch() {
 }
 
 function resetToOriginalList() {
-    const cardSection = document.getElementById('card_section');
+    let cardSection = document.getElementById('card_section');
     cardSection.innerHTML = '';
     getPokedex();
     clearSearch();
