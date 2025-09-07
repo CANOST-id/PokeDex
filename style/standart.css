@@ -5,6 +5,7 @@ html {
 body {
     background-color: #343A40;
     margin: 0;
+    overflow: hidden;
 }
 
 header {

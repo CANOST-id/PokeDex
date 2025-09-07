@@ -18,6 +18,7 @@ async function openDialog(pokemonId) {
   const pokemon = pokemonIndex.find(p => p.id === pokemonId);       // get complete objekt data 
   const evolutionNames = await fetchEvolutionChain(pokemon.name);
   const evolutionImages = getEvolutionImages(evolutionNames, pokemonIndex);
+  document.body.style.overflow = 'hidden';                          // disable scroll
   renderDialog(pokemon, evolutionImages);
 }
 
