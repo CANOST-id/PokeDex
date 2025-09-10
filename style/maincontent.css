@@ -60,8 +60,8 @@ nav {
     transition: 0.2s linear;
 }
 
-.search_icon:focus~.input,
-.input:focus {
+.search_icon:hover~.input,
+.input:hover {
     box-shadow: none;
     width: 170px;
     border-radius: 0px;
