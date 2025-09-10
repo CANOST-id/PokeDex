@@ -211,3 +211,8 @@ nav {
 .go_back_button:hover {
     box-shadow: inset 0px 0px 25px #FFCC01;
 }
+
+.back_to_main_button {
+    font-size: 16px;
+    margin: 0;
+}
