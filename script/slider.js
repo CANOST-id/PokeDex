@@ -27,3 +27,9 @@ function renderRespSlider() {
                         </section>`;
     sliderImageRef.innerHTML = sectionContent;
 }
+
+// delete slider after search
+function removeSlider() {
+    document.getElementById('main_slider').classList.add('d_none');
+    document.getElementById('respSlider').classList.add('d_none');
+}
