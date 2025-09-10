@@ -34,7 +34,7 @@ function handleNoResults(found) {
     if (!found) {
         cardSection.innerHTML += `<section id="not_found" class="not_found_section">
                                 <h3 class="not_found">No Pokémon found. Please try again.
-                                Or go ... <button class="go_back_button" onclick="resetToOriginalList()">...BACK</button></h3>
+                                Or go ... </h3>
                                 </section>`;
     }
 }
@@ -69,8 +69,8 @@ function searchPokemon() {
     handleNoResults(found);
     handleEmptyInput(input);
     clearSearch();
-    disableButton();
     removeSlider();
+    replaceButtonForSearch();
 }
 
 // clear search input
@@ -78,11 +78,19 @@ function clearSearch() {
     document.getElementById('search_input').value = '';
 }
 
+// replace button while searching
+function replaceButtonForSearch() {
+    let button = document.getElementById('more_button');
+    button.innerHTML = '<h3 class="back_to_main_button" onclick="resetToOriginalList()">... BACK TO MAIN</h3>';
+}
+
 // reset card list to original
 function resetToOriginalList() {
     let cardSection = document.getElementById('card_section');
     cardSection.innerHTML = '';
+    offset = 0;
+    limit = 30;
     getPokedex();
     clearSearch();
-    enableButton();
+    showSlider();
 }
