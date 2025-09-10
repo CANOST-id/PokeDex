@@ -33,3 +33,9 @@ function removeSlider() {
     document.getElementById('main_slider').classList.add('d_none');
     document.getElementById('respSlider').classList.add('d_none');
 }
+
+// show slider again when resetting to original list
+function showSlider() {
+    document.getElementById('main_slider').classList.remove('d_none');
+    document.getElementById('respSlider').classList.remove('d_none');
+}
