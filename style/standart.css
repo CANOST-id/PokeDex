@@ -17,6 +17,12 @@ header {
     background-color: #343A40;
 }
 
+.pokedex_logo {
+    z-index: 5;
+    height: 200px;
+    position: absolute;
+}
+
 /* footer */
 footer {
     width: 100%;

@@ -69,12 +69,6 @@
     }
 }
 
-.pokedex_logo {
-    z-index: 6;
-    height: 200px;
-    position: absolute;
-}
-
 .slider_mid_image {
     background-image: url(../assets/images/pokeball.png);
     width: 100%;
