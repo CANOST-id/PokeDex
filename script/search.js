@@ -81,6 +81,7 @@ function clearSearch() {
 // replace button while searching
 function replaceButtonForSearch() {
     let button = document.getElementById('more_button');
+    button.innerHTML = '';
     button.innerHTML = '<h3 class="back_to_main_button" onclick="resetToOriginalList()">... BACK TO MAIN</h3>';
 }
 
