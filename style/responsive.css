@@ -49,6 +49,12 @@
     .resp_slider {
         display: block;
     }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (min-width: 1250px) {
