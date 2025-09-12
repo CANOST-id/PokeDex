@@ -191,8 +191,8 @@ nav {
     margin-top: 50px;
 }
 
-.go_back_button {
-    width: 20%;
+.back_to_main_button {
+    width: 50%;
     font-family: "Orbitron", sans-serif;
     font-weight: 500;
     position: relative;
@@ -205,10 +205,14 @@ nav {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.go_back_button:hover {
+.back_to_main_button:hover {
     box-shadow: inset 0px 0px 25px #FFCC01;
 }
 
