@@ -80,7 +80,7 @@ function clearSearch() {
 
 // replace button while searching
 function replaceButtonForSearch() {
-    let button = document.getElementById('more_button');
+    let button = document.getElementById('load_more_section_id');
     button.innerHTML = '';
     button.innerHTML = '<h3 class="back_to_main_button" onclick="resetToOriginalList()">... BACK TO MAIN</h3>';
 }
@@ -93,5 +93,13 @@ function resetToOriginalList() {
     limit = 30;
     getPokedex();
     clearSearch();
+    resetLoadMoreButton();
     showSlider();
+}
+
+// reset load more button
+function resetLoadMoreButton() {
+    let button = document.getElementById('load_more_section_id');
+    button.innerHTML = '';
+    button.innerHTML = '<button id="more_button" class="load_button" onclick="changeOffset()">More Pokemon...</button>';
 }
